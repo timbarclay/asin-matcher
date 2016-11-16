@@ -30,4 +30,4 @@ A set of simple utility methods that help identify Amazon product links and extr
 
 ## Issues
 
-Amazon product links come in all sorts of shapes and sizes. I've tested this library against a reasonable number of them and I'm using it often in other applications so I hope it's fairly reliable, but if you find an Amazon link that it doesn't behave with, please create an issue so I can look into it.
+Amazon product links come in all sorts of shapes and sizes. I've tested this library against a reasonable number of them and I'm using it often in other applications so I hope it's fairly reliable, but if you find an Amazon link that it doesn't behave with, please [create an issue](https://github.com/timbarclay/asin-matcher/issues) so I can look into it.

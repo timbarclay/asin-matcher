@@ -1,7 +1,7 @@
 {
   "name": "asin-matcher",
-  "version": "0.1.0",
-  "description": "A regex that captures the ASIN product identifier from an Amazon product url",
+  "version": "0.1.1",
+  "description": "The Amazon ASIN helper",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
