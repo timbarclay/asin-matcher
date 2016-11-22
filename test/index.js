@@ -8,6 +8,7 @@ const link2 = "https://www.amazon.co.uk/d/Laptops/Apple-MacBook-Display-15-4-inc
 const link3 = "https://www.amazon.ca/dp/B00IBIUZGW";
 const link4 = "https://www.amazon.com/gp/product/B00IBIUZGW";
 const link5 = "https://www.amazon.co.uk/Old-Man-Sea-Ernest-Hemingway/dp/0099908409/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1479398325&sr=1-1";
+const link6 = "https://www.amazon.co.uk/GoPro-CHDHY-401-EU-HERO4-SILVER/dp/B00O1XRT9W?tag=plathi21&psc=1&SubscriptionId=AKIAI3FTSIOZQ7GOWL4Q&linkCode=xm2&camp=2025&creative=165953&creativeASIN=B00O1XRT9W";
 
 describe("asinMatcher", () => {
     describe("isProductLink", () => {
@@ -17,6 +18,7 @@ describe("asinMatcher", () => {
             asinMatcher.isProductLink(link3).should.equal(true);
             asinMatcher.isProductLink(link4).should.equal(true);
             asinMatcher.isProductLink(link5).should.equal(true);
+            asinMatcher.isProductLink(link6).should.equal(true);
         });
 
         it("correctly fails to identify other links", () => {
@@ -48,6 +50,7 @@ describe("asinMatcher", () => {
             asinMatcher.getMarket(link3).should.equal("ca");
             asinMatcher.getMarket(link4).should.equal("com");
             asinMatcher.getMarket(link5).should.equal("co.uk");
+            asinMatcher.getMarket(link6).should.equal("co.uk");
         });
 
         it("returns null if the url is not matched", () => {
@@ -63,6 +66,7 @@ describe("asinMatcher", () => {
             asinMatcher.getAsin(link3).should.equal("B00IBIUZGW");
             asinMatcher.getAsin(link4).should.equal("B00IBIUZGW");
             asinMatcher.getAsin(link5).should.equal("0099908409");
+            asinMatcher.getAsin(link6).should.equal("B00O1XRT9W");
         });
 
         it("returns null if the url is not matched", () => {

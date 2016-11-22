@@ -44,6 +44,8 @@ Amazon product links come in all sorts of shapes and sizes. Here's a (non exhaus
 | domain/gp/product/ASIN        | https://www.amazon.com/gp/product/B00IBIUZGW                               |
 | domain/gp/product/ISBN        | https://www.amazon.com/gp/product/0099908409                               |
 
-Plenty of different combinations of path sections can optionally go between the domain name and the part of the path that represents the ASIN. Plus the ASIN can either be a standard Amazon product reference (10 alphanumeric characters starting with a 'B') or an ISBN-10 if the product is a book (10 numerical characters). 
+Plenty of different combinations of path sections can optionally go between the domain name and the part of the path that represents the ASIN. Plus the ASIN can either be a standard Amazon product reference (10 alphanumeric characters starting with a 'B') or an ISBN-10 if the product is a book (10 numerical characters).
+
+After the ASIN, there can be the end of the URL, a slash (followed by other path sections) or a query string (starting with ?).
 
 I've tested this library against a reasonable number of product links and I use it frequently in other applications so I hope it's fairly reliable, but if you find an Amazon link that it doesn't behave with, please [create an issue](https://github.com/timbarclay/asin-matcher/issues) so I can look into it.

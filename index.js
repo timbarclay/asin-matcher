@@ -1,4 +1,4 @@
-var regString = '(?:www.)?ama?zo?n.(\\w{2,3}\\.?\\w{0,2})/.*/{1,3}([B|0-9][A-Z0-9]{9})(?:\\/|$)';
+var regString = '(?:www.)?ama?zo?n.(\\w{2,3}\\.?\\w{0,2})/.*/{1,3}([B|0-9][A-Z0-9]{9})(?:\\/|\\?|$)';
 var regex = new RegExp(regString);
 
 module.exports = {
