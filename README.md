@@ -16,13 +16,17 @@ asinMatcher.isProductLink(link) // true
 asinMatcher.isProductLink("http://www.google.com") // false
 
 // match returns an object containing the interesting parts of the url
-asinMatcher.match(link) // {market: "ca", asin: "B00IBIUZGW"}
+asinMatcher.match(link) // {market: "ca", asin: "B00IBIUZGW", idType: "ASIN"}
 
 // getMarket returns the market (i.e. the top level domain) of the product link
 asinMatcher.getMarket(link) // "ca"
 
 // getAsin returns the ASIN product link for the url
 asinMatcher.getAsin(link) // "B00IBIUZGW"
+
+// getIdType returns the type of ID used in the url. Options are ASIN and ISBN
+asinMatcher.getIdType(link) // "ASIN"
+asinMatcher.getIdType("https://www.amazon.com/dp/0684801221") // "ISBN"
 ```
 
 The npm package includes a `d.ts` type definition file so if you're using TypeScript (version 2) you won't need to import types separetely.

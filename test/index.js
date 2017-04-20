@@ -31,14 +31,14 @@ describe("asinMatcher", () => {
 
     describe("match", () => {
         it("correctly match url parts", () => {
-            var expected = {market: "com.mx", asin: "B00PXWGMG6"};
+            const expected = {market: "com.mx", idType: "ASIN", asin: "B00PXWGMG6"};
             asinMatcher.match(link1).should.deep.equal(expected);
-            var expected2 = {market: "co.uk", asin: "0099908409"};
+            const expected2 = {market: "co.uk", idType: "ISBN", asin: "0099908409"};
             asinMatcher.match(link5).should.deep.equal(expected2);
         });
 
         it("returns null if the url is not matched", () => {
-            var match = asinMatcher.match("this is definitely not a url");
+            const match = asinMatcher.match("this is definitely not a url");
             expect(match).to.equal(null);
         });
     });
@@ -54,7 +54,7 @@ describe("asinMatcher", () => {
         });
 
         it("returns null if the url is not matched", () => {
-            var match = asinMatcher.getMarket("this is definitely not a url");
+            const match = asinMatcher.getMarket("this is definitely not a url");
             expect(match).to.equal(null);
         });
     });
@@ -70,8 +70,24 @@ describe("asinMatcher", () => {
         });
 
         it("returns null if the url is not matched", () => {
-            var match = asinMatcher.getAsin("this is definitely not a url");
+            const match = asinMatcher.getAsin("this is definitely not a url");
             expect(match).to.equal(null);
         });
     });
+
+    describe("getIdType", () => {
+        it("correctly identifies the id type", () => {
+            asinMatcher.getIdType(link1).should.equal("ASIN");
+            asinMatcher.getIdType(link2).should.equal("ASIN");
+            asinMatcher.getIdType(link3).should.equal("ASIN");
+            asinMatcher.getIdType(link4).should.equal("ASIN");
+            asinMatcher.getIdType(link5).should.equal("ISBN");
+            asinMatcher.getIdType(link6).should.equal("ASIN");
+        });
+
+        it("returns null if the url is not matched", () => {
+            const match = asinMatcher.getIdType("this is definitely not a url");
+            expect(match).to.equal(null);
+        });
+    })
 });

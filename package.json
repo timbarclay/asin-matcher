@@ -1,6 +1,6 @@
 {
   "name": "asin-matcher",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "The Amazon ASIN helper",
   "main": "index.js",
   "types": "./ts/index.d.ts",
